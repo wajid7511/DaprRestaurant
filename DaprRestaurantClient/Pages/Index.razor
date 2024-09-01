@@ -1,7 +1,38 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Order</PageTitle>
+<div class="row mb-3">
+    <div class="col-md-6">
+        <input class="form-control mb-2" id="customer-name" type="text" placeholder="Customer Name"
+            @bind-value="@orderInputDto.CustomerName">
+    </div>
+    <div class="col-md-6">
+        <input class="form-control mb-2" id="customer-address" type="text" placeholder="Customer Address"
+            @bind-value="@orderInputDto.CustomerAddress">
+    </div>
+</div>
 
-<h1>Hello, world!</h1>
+<div class="row mb-3">
+    <div class="col-md-6">
+        <input class="form-control mb-2" id="order-items" type="text" placeholder="Order Items"
+            @bind-value="@orderInputDto.OrderItems">
+    </div>
+    <div class="col-md-6">
+        <input class="form-control mb-2" id="order-notes" type="text" placeholder="Order Notes"
+            @bind-value="@orderInputDto.Notes">
+    </div>
+</div>
 
-Welcome to your new app.
+<div class="row">
+    <div class="col text-center">
+        <button class="btn btn-primary" @onclick="PlaceOrderAsync">Place Order</button>
+    </div>
+</div>
+
+@code {
+    private OrderInputDto orderInputDto = new();
+    private void PlaceOrderAsync()
+    {
+        Console.WriteLine("Order will be places");
+    }
+}
