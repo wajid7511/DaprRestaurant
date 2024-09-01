@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaprRestaurantClient", "DaprRestaurantClient\DaprRestaurantClient.csproj", "{C26044BC-9751-4451-AA1E-28BCFB3DDDF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaprRestaurantKitchen", "DaprRestaurantKitchen\DaprRestaurantKitchen.csproj", "{1B5BC90F-E022-409B-A89D-8A61E2B17C41}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C26044BC-9751-4451-AA1E-28BCFB3DDDF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C26044BC-9751-4451-AA1E-28BCFB3DDDF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C26044BC-9751-4451-AA1E-28BCFB3DDDF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C26044BC-9751-4451-AA1E-28BCFB3DDDF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B5BC90F-E022-409B-A89D-8A61E2B17C41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B5BC90F-E022-409B-A89D-8A61E2B17C41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B5BC90F-E022-409B-A89D-8A61E2B17C41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B5BC90F-E022-409B-A89D-8A61E2B17C41}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
