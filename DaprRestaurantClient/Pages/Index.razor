@@ -1,38 +1,53 @@
 ﻿@page "/"
-
+@inject DaprClient _daprClient;
+@inject ILogger<Index>? _logger;
 <PageTitle>Order</PageTitle>
 <div class="row mb-3">
-    <div class="col-md-6">
+    <div class="col-md-4">
+        <input class="form-control mb-2" disabled id="order-number" @bind-value="@orderInputDto.OrderNumber">
+    </div>
+    <div class="col-md-4">
         <input class="form-control mb-2" id="customer-name" type="text" placeholder="Customer Name"
             @bind-value="@orderInputDto.CustomerName">
-    </div>
-    <div class="col-md-6">
-        <input class="form-control mb-2" id="customer-address" type="text" placeholder="Customer Address"
-            @bind-value="@orderInputDto.CustomerAddress">
     </div>
 </div>
 
 <div class="row mb-3">
-    <div class="col-md-6">
+    <div class="col-md-4">
+        <input class="form-control mb-2" id="customer-address" type="text" placeholder="Customer Address"
+            @bind-value="@orderInputDto.CustomerAddress">
+    </div>
+    <div class="col-md-4">
         <input class="form-control mb-2" id="order-items" type="text" placeholder="Order Items"
             @bind-value="@orderInputDto.OrderItems">
-    </div>
-    <div class="col-md-6">
-        <input class="form-control mb-2" id="order-notes" type="text" placeholder="Order Notes"
-            @bind-value="@orderInputDto.Notes">
     </div>
 </div>
 
 <div class="row">
-    <div class="col text-center">
+
+    <div class="col-md-4">
+        <input class="form-control mb-2" id="order-notes" type="text" placeholder="Order Notes"
+            @bind-value="@orderInputDto.Notes">
+    </div>
+    <div class="col-md-4">
         <button class="btn btn-primary" @onclick="PlaceOrderAsync">Place Order</button>
     </div>
 </div>
 
 @code {
     private OrderInputDto orderInputDto = new();
-    private void PlaceOrderAsync()
+    private static readonly string storeName = "statestore";
+    private async Task PlaceOrderAsync()
     {
-        Console.WriteLine("Order will be places");
+        try
+        {
+            await _daprClient.SaveStateAsync(storeName, orderInputDto.OrderNumber.ToString(), orderInputDto);
+            await _daprClient.PublishEventAsync("pubsub", "orderplaced", orderInputDto);
+            _logger?.LogInformation("Order Places {0}", orderInputDto.OrderNumber.ToString());
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogError(ex, ex.ToString());
+        }
     }
 }

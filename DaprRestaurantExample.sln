@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaprRestaurantClient", "Dap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaprRestaurantKitchen", "DaprRestaurantKitchen\DaprRestaurantKitchen.csproj", "{1B5BC90F-E022-409B-A89D-8A61E2B17C41}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaprRestaurantCommon", "DaprRestaurantCommon\DaprRestaurantCommon.csproj", "{83EF596F-4828-4734-85F4-885D74CEB859}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{1B5BC90F-E022-409B-A89D-8A61E2B17C41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B5BC90F-E022-409B-A89D-8A61E2B17C41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B5BC90F-E022-409B-A89D-8A61E2B17C41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83EF596F-4828-4734-85F4-885D74CEB859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83EF596F-4828-4734-85F4-885D74CEB859}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83EF596F-4828-4734-85F4-885D74CEB859}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83EF596F-4828-4734-85F4-885D74CEB859}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
